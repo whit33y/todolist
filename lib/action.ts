@@ -9,9 +9,10 @@ export async function createTodo(formData: FormData) {
     text: formData.get("text"),
   };
   const text = rawFormData.text?.toString();
+  const date = new Date().toISOString().split("T")[0];
   try {
     await sql`
-          INSERT INTO todos (name) VALUES(${text})`;
+          INSERT INTO todos (name, date) VALUES(${text}, ${date})`;
   } catch (error) {
     console.error("Database error: ", error);
   }
