@@ -1,7 +1,7 @@
 "use server";
 import { sql } from "@vercel/postgres";
 import { Todos } from "./defintions";
-import { unstable_noStore as noStore } from "next/cache";
+import { unstable_noStore as noStore, revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 
 export async function createTodo(formData: FormData) {
@@ -9,13 +9,13 @@ export async function createTodo(formData: FormData) {
     text: formData.get("text"),
   };
   const text = rawFormData.text?.toString();
-  console.log(typeof text);
   try {
     await sql`
           INSERT INTO todos (name) VALUES(${text})`;
   } catch (error) {
     console.error("Database error: ", error);
   }
+  revalidatePath("/");
   redirect("/");
 }
 
@@ -26,6 +26,7 @@ export async function deleteTodo(id: string) {
   } catch (error) {
     console.error("Database error:", error);
   }
+  revalidatePath("/");
   redirect("/");
 }
 

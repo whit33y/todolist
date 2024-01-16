@@ -5,9 +5,11 @@ export default function Form() {
   return (
     <form action={createTodo}>
       <div className="flex justify-center">
-        <label htmlFor="text">Add new todo </label>
+        <label htmlFor="text" className="mx-2">
+          Add new todo{" "}
+        </label>
         <input name="text" id="text" placeholder="Type here..." type="text" />
-        <button type="submit" className="flex">
+        <button type="submit" className="flex font-bold">
           Add todo <PencilIcon className="w-5" />
         </button>
       </div>
