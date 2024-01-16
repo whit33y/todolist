@@ -5,11 +5,11 @@ import { DeleteTodo } from "./ui/buttons";
 export default async function Home() {
   const todos = await fetchTodos();
   return (
-    <main>
+    <main className="bg-amber-50">
       <div>
         <h1 className="text-3xl text-center font-bold">Todo list 📝</h1>
         <Form />
-        <p className="text-lg text-center">Your todos</p>
+        <p className="text-lg text-center font-semibold">Your todos</p>
       </div>
       <ul className="block align-center">
         {todos?.map((todo) => (

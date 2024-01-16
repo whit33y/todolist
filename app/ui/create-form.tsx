@@ -8,7 +8,13 @@ export default function Form() {
         <label htmlFor="text" className="mx-2">
           Add new todo{" "}
         </label>
-        <input name="text" id="text" placeholder="Type here..." type="text" />
+        <input
+          name="text"
+          id="text"
+          placeholder="Type here..."
+          type="text"
+          className="rounded-md border mx-2"
+        />
         <button type="submit" className="flex font-bold">
           Add todo <PencilIcon className="w-5" />
         </button>
