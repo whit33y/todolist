@@ -6,8 +6,8 @@ export default async function Home() {
   const todos = await fetchTodos();
   return (
     <main>
-      <h1>Todo list</h1>
-      <p>Your todos</p>
+      <h1 className="text-3xl text-center font-bold">Todo list 📝</h1>
+      <p className="text-lg text-center">Your todos</p>
       <ul>
         {todos?.map((todo) => (
           <li key={todo.id}>
