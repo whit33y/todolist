@@ -6,8 +6,8 @@ export function DeleteTodo({ id }: { id: string }) {
   const deleteTodoWithId = deleteTodo.bind(null, id);
   return (
     <form action={deleteTodoWithId}>
-      <button className="border-0 mx-2">
-        <span className="sr-only">Delete</span>
+      <button className="border-0 mx-2 flex">
+        <p>delete</p>
         <TrashIcon className="w-5" />
       </button>
     </form>
