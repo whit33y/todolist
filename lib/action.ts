@@ -12,7 +12,7 @@ export async function createTodo(formData: FormData) {
   const date = new Date().toISOString().split("T")[0];
   try {
     await sql`
-          INSERT INTO todos (name, date) VALUES(${text}, ${date})`;
+          INSERT INTO todos (name, date, edit) VALUES(${text}, ${date}, false)`;
   } catch (error) {
     console.error("Database error: ", error);
   }
@@ -43,4 +43,18 @@ export async function fetchTodos() {
     console.error("Database error: ", error);
     throw new Error("Failed to fetch todos");
   }
+}
+
+export async function showEdit(id: string, edit: boolean) {
+  try {
+    await sql`
+    UPDATE todos
+    SET edit = ${!edit}
+    WHERE id = ${id}
+    `;
+  } catch (error) {
+    return { message: "Db error", error };
+  }
+  revalidatePath("/");
+  redirect("/");
 }

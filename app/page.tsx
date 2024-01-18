@@ -1,6 +1,6 @@
 import { fetchTodos } from "@/lib/action";
 import Form from "./ui/create-form";
-import { DeleteTodo } from "./ui/buttons";
+import { DeleteTodo, EditTodo } from "./ui/buttons";
 import { PencilIcon } from "@heroicons/react/24/outline";
 import EditForm from "./ui/edit-form";
 
@@ -18,11 +18,8 @@ export default async function Home() {
           <li key={todo.id} className="flex justify-between">
             <p>{todo.name}</p>
             <div className="flex">
-              <button className="flex">
-                <p>edit</p>
-                <PencilIcon className="w-5" />
-              </button>
-              <div className="hidden">
+              <EditTodo id={todo.id} edit={todo.edit} />
+              <div className={todo.edit ? "block" : "hidden"}>
                 <EditForm nameValue={todo.name} />
               </div>
               <DeleteTodo id={todo.id} />

@@ -1,7 +1,7 @@
 import React from "react";
-import { TrashIcon } from "@heroicons/react/24/outline";
+import { TrashIcon, PencilIcon } from "@heroicons/react/24/outline";
 
-import { deleteTodo } from "@/lib/action";
+import { deleteTodo, showEdit } from "@/lib/action";
 export function DeleteTodo({ id }: { id: string }) {
   const deleteTodoWithId = deleteTodo.bind(null, id);
   return (
@@ -9,6 +9,18 @@ export function DeleteTodo({ id }: { id: string }) {
       <button className="border-0 mx-2 flex">
         <p>delete</p>
         <TrashIcon className="w-5" />
+      </button>
+    </form>
+  );
+}
+
+export function EditTodo({ id, edit }: { id: string; edit: boolean }) {
+  const showEditWithId = showEdit.bind(null, id, edit);
+  return (
+    <form action={showEditWithId} className={edit ? "hidden" : "flex"}>
+      <button>
+        <p>edit</p>
+        <PencilIcon className="w-5" />
       </button>
     </form>
   );
