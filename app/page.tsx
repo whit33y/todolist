@@ -1,7 +1,6 @@
 import { fetchTodos } from "@/lib/action";
 import Form from "./ui/create-form";
 import { DeleteTodo, EditTodo } from "./ui/buttons";
-import { PencilIcon } from "@heroicons/react/24/outline";
 import EditForm from "./ui/edit-form";
 
 export default async function Home() {

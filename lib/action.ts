@@ -31,6 +31,23 @@ export async function deleteTodo(id: string) {
   redirect("/");
 }
 
+export async function updateTodo(formData: FormData, id: string) {
+  const rawFormData = {
+    text: formData.get("text"),
+  };
+  const text = rawFormData.text?.toString();
+  try {
+    await sql`
+     UPDATE todos
+    SET name = ${text}
+    WHERE id = ${id}`;
+  } catch (error) {
+    console.error("Database error:", error);
+  }
+  revalidatePath("/");
+  redirect("/");
+}
+
 export async function fetchTodos() {
   noStore();
   try {
