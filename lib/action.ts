@@ -31,7 +31,7 @@ export async function deleteTodo(id: string) {
   redirect("/");
 }
 
-export async function updateTodo(formData: FormData, id: string) {
+export async function updateTodo(formData: FormData) {
   const rawFormData = {
     text: formData.get("text"),
   };
@@ -39,8 +39,8 @@ export async function updateTodo(formData: FormData, id: string) {
   try {
     await sql`
      UPDATE todos
-    SET name = ${text}
-    WHERE id = ${id}`;
+    SET name = ${text}, edit = false
+    WHERE id = '8bd1719e-1e04-4817-ab40-d1b09ed702c2'`;
   } catch (error) {
     console.error("Database error:", error);
   }
