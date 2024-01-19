@@ -18,7 +18,7 @@ export function EditTodo({ id, edit }: { id: string; edit: boolean }) {
   const showEditWithId = showEdit.bind(null, id, edit);
   return (
     <form action={showEditWithId} className={edit ? "hidden" : "flex"}>
-      <button>
+      <button className="flex">
         <p>edit</p>
         <PencilIcon className="w-5" />
       </button>

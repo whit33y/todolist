@@ -19,7 +19,7 @@ export default async function Home() {
             <div className="flex">
               <EditTodo id={todo.id} edit={todo.edit} />
               <div className={todo.edit ? "block" : "hidden"}>
-                <EditForm nameValue={todo.name} />
+                <EditForm nameValue={todo.name} id={todo.id} />
               </div>
               <DeleteTodo id={todo.id} />
             </div>

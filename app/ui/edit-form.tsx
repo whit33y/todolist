@@ -1,6 +1,9 @@
+import { updateTodo } from "@/lib/action";
+
 export default function EditForm({ nameValue }: any) {
+  const valueName = nameValue;
   return (
-    <form>
+    <form action={updateTodo}>
       <div className="flex justify-center">
         <input
           name="text"
@@ -8,7 +11,7 @@ export default function EditForm({ nameValue }: any) {
           placeholder="Type here..."
           type="text"
           className="rounded-md border mx-2"
-          value={`${nameValue}`}
+          defaultValue={`${valueName}`}
         />
         <button type="submit" className="flex font-bold">
           Apply

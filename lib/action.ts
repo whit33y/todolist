@@ -36,6 +36,7 @@ export async function updateTodo(formData: FormData) {
     text: formData.get("text"),
   };
   const text = rawFormData.text?.toString();
+  console.log(rawFormData);
   try {
     await sql`
      UPDATE todos
