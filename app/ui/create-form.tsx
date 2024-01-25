@@ -3,10 +3,7 @@ import { PencilIcon } from "@heroicons/react/24/outline";
 export default function Form() {
   return (
     <form action={createTodo}>
-      <div className="flex justify-center">
-        <label htmlFor="text" className="mx-2 font-bold">
-          Add new todo{" "}
-        </label>
+      <div className="flex flex-col justify-center items-center">
         <input
           name="text"
           id="text"
