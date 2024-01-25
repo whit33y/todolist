@@ -1,6 +1,6 @@
 import { updateTodo } from "@/lib/action";
 
-export default function EditForm({ nameValue }: any) {
+export default function EditForm({ nameValue, id }: any) {
   const valueName = nameValue;
   return (
     <form action={updateTodo}>
@@ -12,6 +12,13 @@ export default function EditForm({ nameValue }: any) {
           type="text"
           className="rounded-md border mx-2"
           defaultValue={`${valueName}`}
+        />
+        <input
+          name="id"
+          id="id"
+          type="text"
+          defaultValue={`${id}`}
+          className="hidden"
         />
         <button type="submit" className="flex font-bold">
           Apply
