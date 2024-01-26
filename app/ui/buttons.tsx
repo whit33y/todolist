@@ -25,3 +25,11 @@ export function EditTodo({ id, edit }: { id: string; edit: boolean }) {
     </form>
   );
 }
+
+export function AddTodo() {
+  return (
+    <button type="submit" className="flex font-bold mt-2">
+      Add todo <PencilIcon className="w-5" />
+    </button>
+  );
+}

@@ -1,9 +1,9 @@
 import { createTodo } from "@/lib/action";
-import { PencilIcon } from "@heroicons/react/24/outline";
+import { AddTodo } from "./buttons";
 export default function Form() {
   return (
     <form action={createTodo}>
-      <div className="flex flex-col justify-center items-center">
+      <div className="flex flex-col justify-center items-center mb-2">
         <input
           name="text"
           id="text"
@@ -11,9 +11,7 @@ export default function Form() {
           type="text"
           className="rounded-md border mx-2"
         />
-        <button type="submit" className="flex font-bold">
-          Add todo <PencilIcon className="w-5" />
-        </button>
+        <AddTodo />
       </div>
     </form>
   );
