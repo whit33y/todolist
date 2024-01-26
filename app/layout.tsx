@@ -15,7 +15,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${titillium.className} bg-amber-50`}>{children}</body>
+      <body className={`${titillium.className} bg-cyan-50`}>{children}</body>
     </html>
   );
 }
