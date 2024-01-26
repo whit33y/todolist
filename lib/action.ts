@@ -58,6 +58,7 @@ export async function fetchTodos() {
     const data = await sql<Todos>`
           SELECT *
           FROM todos
+          ORDER BY date ASC
           `;
     return data.rows;
   } catch (error) {
