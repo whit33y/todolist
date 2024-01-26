@@ -12,7 +12,7 @@ export default function EditForm({ nameValue, id }: any) {
           type="text"
           className="rounded-md border mx-2"
           defaultValue={`${valueName}`}
-          maxLength={28}
+          maxLength={26}
         />
         <input
           name="id"

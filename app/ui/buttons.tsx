@@ -1,6 +1,6 @@
 import React from "react";
 import {
-  TrashIcon,
+  CheckIcon,
   PencilIcon,
   PaperAirplaneIcon,
 } from "@heroicons/react/24/outline";
@@ -10,9 +10,9 @@ export function DeleteTodo({ id }: { id: string }) {
   const deleteTodoWithId = deleteTodo.bind(null, id);
   return (
     <form action={deleteTodoWithId}>
-      <button className="border-0 mx-2 flex">
-        <p>delete</p>
-        <TrashIcon className="w-5" />
+      <button className="border-b-2 mb-1 mx-2 flex">
+        <p>finished</p>
+        <CheckIcon className="w-4 mt-1" />
       </button>
     </form>
   );
@@ -22,9 +22,9 @@ export function EditTodo({ id, edit }: { id: string; edit: boolean }) {
   const showEditWithId = showEdit.bind(null, id, edit);
   return (
     <form action={showEditWithId} className={edit ? "hidden" : "flex"}>
-      <button className="flex">
+      <button className="flex border-b-2 mb-1">
         <p>edit</p>
-        <PencilIcon className="w-5" />
+        <PencilIcon className="w-4 mt-1" />
       </button>
     </form>
   );
@@ -34,10 +34,10 @@ export function AddTodo() {
   return (
     <button
       type="submit"
-      className="flex font-bold mt-2 px-4 border rounded-md bg-purple-100"
+      className="flex font-bold mt-2 px-4 shadow-sm rounded-md bg-purple-100"
     >
       New todo
-      <PaperAirplaneIcon className="w-4" />
+      <PaperAirplaneIcon className="w-4 mt-1" />
     </button>
   );
 }

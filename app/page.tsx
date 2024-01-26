@@ -7,13 +7,14 @@ export default async function Home() {
   const todos = await fetchTodos();
   return (
     <main className="flex flex-col items-center">
-      <div className="bg-purple-200 border rounded-lg shadow-sm m-4 p-2 w-96">
-        <h1 className="text-2xl text-center font-bold mb-2">Todo list 📝</h1>
+      <div className="bg-purple-200 border rounded-lg shadow-sm m-4 p-2 w-96 ">
+        <h1 className="text-3xl text-center mb-2 text-white">T O D O</h1>
         <Form />
       </div>
-      <ul className="block align-center w-96 bg-white rounded-lg shadow-sm m-2 p-2">
+      <ul className="block align-center w-96 bg-white rounded-lg shadow-md m-2 p-2">
+        <p className="text-xl">📌 My todos:</p>
         {todos?.map((todo) => (
-          <li key={todo.id} className="flex justify-between">
+          <li key={todo.id} className="flex justify-between border-b-2 mb-1">
             <p>{todo.name}</p>
             <div className="flex">
               <EditTodo id={todo.id} edit={todo.edit} />

@@ -4,7 +4,7 @@ import "./globals.css";
 
 const titillium = Titillium_Web({ weight: ["400"], subsets: ["latin"] });
 export const metadata: Metadata = {
-  title: "Todo list by Kuba",
+  title: "TODO by Kuba",
   description: "Simple web app, where you can create and delete your todos.",
 };
 
