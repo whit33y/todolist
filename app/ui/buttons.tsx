@@ -1,5 +1,9 @@
 import React from "react";
-import { TrashIcon, PencilIcon } from "@heroicons/react/24/outline";
+import {
+  TrashIcon,
+  PencilIcon,
+  PaperAirplaneIcon,
+} from "@heroicons/react/24/outline";
 
 import { deleteTodo, showEdit } from "@/lib/action";
 export function DeleteTodo({ id }: { id: string }) {
@@ -28,8 +32,12 @@ export function EditTodo({ id, edit }: { id: string; edit: boolean }) {
 
 export function AddTodo() {
   return (
-    <button type="submit" className="flex font-bold mt-2">
-      Add todo <PencilIcon className="w-5" />
+    <button
+      type="submit"
+      className="flex font-bold mt-2 px-4 border rounded-md bg-purple-100"
+    >
+      New todo
+      <PaperAirplaneIcon className="w-4" />
     </button>
   );
 }
