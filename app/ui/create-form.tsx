@@ -10,6 +10,7 @@ export default function Form() {
           placeholder="Type here..."
           type="text"
           className="rounded-md border mx-2"
+          maxLength={28}
         />
         <AddTodo />
       </div>
