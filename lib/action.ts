@@ -39,7 +39,6 @@ export async function updateTodo(formData: FormData) {
 
   const text = rawFormData.text?.toString();
   const id = rawFormData.id?.toString();
-
   try {
     await sql`
      UPDATE todos
